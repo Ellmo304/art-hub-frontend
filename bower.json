@@ -1,0 +1,26 @@
+{
+  "name": "art-hub-frontend",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Elliot Brock <ell_304@msn.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "^1.6.1"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "satellizer": "^0.15.5"
+  }
+}

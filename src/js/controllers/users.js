@@ -1,6 +1,7 @@
 angular.module('artHub')
-  .controller('UsersIndexController', UsersIndexController)
-  .controller('UsersShowController', UsersShowController);
+.controller('UsersIndexController', UsersIndexController)
+.controller('UsersShowController', UsersShowController)
+.controller('UsersEditController', UsersEditController);
 
 
 UsersIndexController.$inject = ['User'];
@@ -22,5 +23,31 @@ function UsersShowController(User, $state, $auth) {
     });
   }
 
+  function isCurrentUser() {
+    return $auth.getPayload().id === Number($state.params.id);
+  }
+
+  usersShow.isCurrentUser = isCurrentUser;
   usersShow.deleteUser = deleteUser;
+}
+
+
+UsersEditController.$inject = ['User', '$state', '$auth'];
+function UsersEditController(User, $state, $auth) {
+  const usersEdit = this;
+  usersEdit.user = User.get($state.params);
+  User.get($state.params, (currentUser) => {
+    usersEdit.user = currentUser;
+    if(usersEdit.user.id !== $auth.getPayload().id) {
+      $state.go('login');
+    }
+  });
+
+
+  function update() {
+    usersEdit.user.$update(() => {
+      $state.go('usersShow', $state.params);
+    });
+  }
+  usersEdit.update = update;
 }

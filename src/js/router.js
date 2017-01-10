@@ -6,8 +6,18 @@ function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('usersIndex', {
     url: '/users',
-    templateUrl: '/templates/usersIndex.html',
+    templateUrl: '/templates/users/usersIndex.html',
     controller: 'UsersIndexController as usersIndex'
+  })
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/templates/users/usersShow.html',
+    controller: 'UsersShowController as usersShow'
+  })
+  .state('usersEdit', {
+    url: '/users/:id/edit',
+    templateUrl: '/templates/users/usersEdit.html',
+    controller: 'UsersEditController as usersEdit'
   })
   .state('register', {
     url: '/register',

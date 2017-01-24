@@ -1,0 +1,14 @@
+<section>
+  <h1>{{ galleriesShow.gallery.name }}</h1>
+      <img ng-src="{{ galleriesShow.gallery.image }}" alt="{{ galleriesShow.gallery.name }}">
+      <p><strong>Address:</strong> {{ galleriesShow.gallery.address }}</p>
+      <p><strong>Nearest Tube:</strong> {{ galleriesShow.gallery.tube }}</p>
+      <p><strong>Info:</strong>{{ galleriesShow.gallery.body }}</p>
+
+
+<button ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button>
+<button ng-click="galleriesShow.deleteGallery()">Delete</button>
+
+<!-- <button ng-if="usersShow.isCurrentUser()" ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button> -->
+<!-- <button ng-if="galleriesShow.isCurrentUser()" ng-click="galleriesShow.deleteGallery()">Delete</button> -->
+</section>

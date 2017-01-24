@@ -1,0 +1,19 @@
+<section>
+  <h1>Exhibitions</h1>
+  <ul>
+    <li ng-repeat="exhibition in exhibitionsIndex.all">
+      <a ui-sref="exhibitionsShow({ id: exhibition.id })"><div>
+      <h2>{{ exhibition.name }}</h2>
+      <h4>{{ exhibition.artist }}</h4>
+      <h4>@ {{ exhibition.gallery.name }}</h4>
+      <h4>From {{ exhibition.opening_date }} to {{ exhibition.closing_date}}</h4>
+      <img ng-src="{{exhibition.image}}" alt="{{exhibition.name}}">
+    </div></a>
+    </li>
+  </ul>
+
+  <br>
+  <button>Click here to upload a new exhibition</button>
+  <!-- <button ng-if="galleriesIndex.isUser()">Click here to add a new gallery</button> -->
+
+</section>

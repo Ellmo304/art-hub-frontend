@@ -1,0 +1,15 @@
+<section>
+  <h1>{{ exhibitionsShow.exhibition.name }}</h1>
+      <img ng-src="{{ exhibitionsShow.exhibition.image }}" alt="{{ exhibitionsShow.exhibition.name }}">
+      <p><strong>From:</strong> {{ exhibitionsShow.exhibition.opening_date }}</p>
+      <p><strong>Until:</strong> {{ exhibitionsShow.exhibition.closing_date }}</p>
+      <p><strong>@</strong> <a ui-sref="galleriesShow({ id: exhibitionsShow.exhibition.gallery.id})">{{ exhibitionsShow.exhibition.gallery.name }}</a></p>
+      <p><strong>Description:</strong>{{ exhibitionsShow.exhibition.body }}</p>
+
+
+<button ui-sref="exhibitionsEdit({ id: exhibitionsShow.exhibition.id })">Edit</button>
+<button ng-click="exhibitionsShow.deleteExhibition()">Delete</button>
+
+<!-- <button ng-if="usersShow.isCurrentUser()" ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button> -->
+<!-- <button ng-if="galleriesShow.isCurrentUser()" ng-click="galleriesShow.deleteGallery()">Delete</button> -->
+</section>

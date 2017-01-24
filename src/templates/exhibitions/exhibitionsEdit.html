@@ -1,0 +1,37 @@
+<section>
+  <form ng-submit="exhibitionsEdit.update()">
+    <div>
+      <label>Name</label>
+      <input type="text" placeholder="Exhibition Name" ng-model="exhibitionsEdit.exhibition.name">
+    </div>
+    <div>
+      <label>Artist/s</label>
+      <input type="text" placeholder="Artist/s Name" ng-model="exhibitionsEdit.exhibition.artist">
+    </div>
+    <div>
+      <!-- here i need to ng repeat a list of galleries in a dropdown making the title chosen put the gallery id in ag model for exhib.new.glleryid  . can make an index of galleries in the exhib controller.
+
+      <label>Gallery</label>
+      <input type="text" placeholder="" ng-model="exhibitionsEdit.exhibition.gallery_id">
+    </div>
+   -->
+    <div>
+      <label>Opening Date</label>
+      <input type="date" ng-model="exhibitionsEdit.exhibition.opening_date">
+    </div>
+    <div>
+      <label>Closing Date</label>
+      <input type="date" ng-model="exhibitionsEdit.exhibition.closing_date">
+    </div>
+    <div>
+      <label>Image</label>
+      <input type="text" placeholder="Image URL" ng-model="exhibitionsEdit.exhibition.image">
+    </div>
+    <div>
+      <label>Info/Description Text</label>
+      <textarea placeholder="Text goes here..." ng-model="exhibitionsEdit.exhibition.body"></textarea>
+    </div>
+
+    <button>Update</button>
+  </form>
+</section>

@@ -39,6 +39,26 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/galleries/galleriesEdit.html',
     controller: 'GalleriesEditController as galleriesEdit'
   })
+  .state('exhibitionsNew', {
+    url: '/exhibitions/new',
+    templateUrl: '/templates/exhibitions/exhibitionsNew.html',
+    controller: 'ExhibitionsNewController as exhibitionsNew'
+  })
+  .state('exhibitionsIndex', {
+    url: '/exhibitions',
+    templateUrl: '/templates/exhibitions/exhibitionsIndex.html',
+    controller: 'ExhibitionsIndexController as exhibitionsIndex'
+  })
+  .state('exhibitionsShow', {
+    url: '/exhibitions/:id',
+    templateUrl: '/templates/exhibitions/exhibitionsShow.html',
+    controller: 'ExhibitionsShowController as exhibitionsShow'
+  })
+  .state('exhibitionsEdit', {
+    url: '/exhibitions/:id/edit',
+    templateUrl: '/templates/exhibitions/exhibitionsEdit.html',
+    controller: 'ExhibitionsEditController as exhibitionsEdit'
+  })
   .state('register', {
     url: '/register',
     templateUrl: '/templates/register.html',

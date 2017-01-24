@@ -1,16 +1,42 @@
-<section>
+<section ng-controller="ExhibitionsShowController as exhibitionsShow">
   <h1>{{ exhibitionsShow.exhibition.name }}</h1>
-      <img ng-src="{{ exhibitionsShow.exhibition.image }}" alt="{{ exhibitionsShow.exhibition.name }}">
-      <p><strong>{{ exhibitionsShow.exhibition.artist }}</strong></p>
-      <p><strong>From:</strong> {{ exhibitionsShow.exhibition.opening_date }}</p>
-      <p><strong>Until:</strong> {{ exhibitionsShow.exhibition.closing_date }}</p>
-      <p><strong>@</strong> <a ui-sref="galleriesShow({ id: exhibitionsShow.exhibition.gallery.id})">{{ exhibitionsShow.exhibition.gallery.name }}</a></p>
-      <p><strong>Description:</strong>{{ exhibitionsShow.exhibition.body }}</p>
+  <img ng-src="{{ exhibitionsShow.exhibition.image }}" alt="{{ exhibitionsShow.exhibition.name }}">
+  <p><strong>{{ exhibitionsShow.exhibition.artist }}</strong></p>
+  <p><strong>From:</strong> {{ exhibitionsShow.exhibition.opening_date }}</p>
+  <p><strong>Until:</strong> {{ exhibitionsShow.exhibition.closing_date }}</p>
+  <p><strong>@</strong> <a ui-sref="galleriesShow({ id: exhibitionsShow.exhibition.gallery.id})">{{ exhibitionsShow.exhibition.gallery.name }}</a></p>
+  <p><strong>Description:</strong>{{ exhibitionsShow.exhibition.body }}</p>
+  <ul> <strong>Reviews for this Exhibition:</strong>
+    <li ng-repeat="review in exhibitionsShow.exhibition.reviews"><a ui-sref="reviewsShow({ id: review.id })">{{ review.title }}</a></li>
+  </ul>
 
 
-<button ui-sref="exhibitionsEdit({ id: exhibitionsShow.exhibition.id })">Edit</button>
-<button ng-click="exhibitionsShow.deleteExhibition()">Delete</button>
+  <button ui-sref="exhibitionsEdit({ id: exhibitionsShow.exhibition.id })">Edit</button>
+  <button ng-click="exhibitionsShow.deleteExhibition()">Delete</button>
 
-<!-- <button ng-if="usersShow.isCurrentUser()" ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button> -->
-<!-- <button ng-if="galleriesShow.isCurrentUser()" ng-click="galleriesShow.deleteGallery()">Delete</button> -->
+  <!-- <button ng-if="usersShow.isCurrentUser()" ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button> -->
+  <!-- <button ng-if="galleriesShow.isCurrentUser()" ng-click="galleriesShow.deleteGallery()">Delete</button> -->
+</section>
+<section ng-controller="ReviewsNewController as reviewsNew">
+
+<button ng-click="showForm = true">Write a review for this Exhibition</button>
+
+
+  <form ng-if="showForm === true" ng-submit="reviewsNew.create()">
+    <div>
+      <label>Title</label>
+      <input type="text" placeholder="Review Title" ng-model="reviewsNew.review.title">
+    </div>
+    <div>
+      <label>Rating</label>
+      <input type="integer" placeholder="1(poor) - 10(excellent)" ng-model="reviewsNew.review.rating">
+    </div>
+    <div>
+      <label>Review</label>
+      <textarea placeholder="Text goes here..." ng-model="reviewsNew.review.body"></textarea>
+    </div>
+
+    <button>Create</button>
+  </form>
+
 </section>

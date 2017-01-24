@@ -1,0 +1,17 @@
+<section>
+
+  <h1>Reviews Show</h1>
+
+  <h1>{{ reviewsShow.review.title }}</h1>
+  <h3>By: {{ reviewsShow.review.user.username }}</h3>
+  <h3>Posted: {{ reviewsShow.review.date }}</h3>
+  <h3>Rating: {{ reviewsShow.review.rating }}/10</h3>
+  <p>{{ reviewsShow.review.body }}</p>
+
+  <button ui-sref="reviewsEdit({ id: reviewsShow.review.id })">Edit</button>
+  <button ng-click="reviewsShow.deleteReview()">Delete</button>
+
+  <!-- <button ng-if="usersShow.isCurrentUser()" ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button> -->
+  <!-- <button ng-if="galleriesShow.isCurrentUser()" ng-click="galleriesShow.deleteGallery()">Delete</button> -->
+
+</section>

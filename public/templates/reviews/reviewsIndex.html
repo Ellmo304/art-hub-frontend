@@ -1,0 +1,17 @@
+<section>
+  <h1>Reviews Index</h1>
+  <ul>
+    <li ng-repeat="review in reviewsIndex.all">
+      <a ui-sref="reviewsShow({ id: review.id })"><div>
+      <h2>{{ review.exhibition.name }}: {{review.title }}</h2>
+      <h4>{{ review.user.username }}</h4>
+      <h4>{{ review.date }}</h4>
+    </div></a>
+    </li>
+  </ul>
+
+  <br>
+  <button ui-sref="reviewsNew">Click here to add a new review</button>
+  <!-- <button ng-if="galleriesIndex.isUser()">Click here to add a new gallery</button> -->
+
+</section>

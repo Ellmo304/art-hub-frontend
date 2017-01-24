@@ -1,0 +1,26 @@
+<section>
+  <form ng-submit="reviewsEdit.update()">
+    <div>
+      <label>Title</label>
+      <input type="text" placeholder="Review Title" ng-model="reviewsEdit.review.title">
+    </div>
+    <div>
+      <input type="hidden" ng-model="reviewsEdit.review.user_id">
+    </div>
+    <div>
+      <input type="hidden" ng-model="reviewsEdit.review.date">
+    </div>
+    <div>
+      <label>Exhibition</label>
+      <select ng-model="reviewsEdit.review.exhibition_id">
+        <option ng-repeat="exhibition in reviewsEdit.exhibitionsAll" value="{{ exhibition.id }}">{{ exhibition.name }}</option>
+      </select>
+    </div>
+  <div>
+    <label>Review</label>
+    <textarea placeholder="Text goes here..." ng-model="reviewsEdit.review.body"></textarea>
+  </div>
+
+  <button>Create</button>
+</form>
+</section>

@@ -4,7 +4,9 @@
       <p><strong>Address:</strong> {{ galleriesShow.gallery.address }}</p>
       <p><strong>Nearest Tube:</strong> {{ galleriesShow.gallery.tube }}</p>
       <p><strong>Info:</strong>{{ galleriesShow.gallery.body }}</p>
-
+      <ul> <strong>Current Exhibitions:</strong>
+        <li ng-repeat="exhibition in galleriesShow.gallery.exhibitions"><a ui-sref="exhibitionsShow({ id: exhibition.id })">{{ exhibition.name }}</a></li>
+      </ul>
 
 <button ui-sref="galleriesEdit({ id: galleriesShow.gallery.id})">Edit</button>
 <button ng-click="galleriesShow.deleteGallery()">Delete</button>

@@ -4,6 +4,10 @@ angular.module('artHub')
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
+  .state('home', {
+    url: '/',
+    templateUrl: '/templates/home.html'
+  })
   .state('usersIndex', {
     url: '/users',
     templateUrl: '/templates/users/usersIndex.html',
@@ -51,13 +55,32 @@ function Router($stateProvider, $urlRouterProvider) {
   })
   .state('exhibitionsShow', {
     url: '/exhibitions/:id',
-    templateUrl: '/templates/exhibitions/exhibitionsShow.html',
-    controller: 'ExhibitionsShowController as exhibitionsShow'
+    templateUrl: '/templates/exhibitions/exhibitionsShow.html'
   })
   .state('exhibitionsEdit', {
     url: '/exhibitions/:id/edit',
     templateUrl: '/templates/exhibitions/exhibitionsEdit.html',
     controller: 'ExhibitionsEditController as exhibitionsEdit'
+  })
+  .state('reviewsNew', {
+    url: '/reviews/new',
+    templateUrl: '/templates/reviews/reviewsNew.html',
+    controller: 'ReviewsNewController as reviewsNew'
+  })
+  .state('reviewsIndex', {
+    url: '/reviews',
+    templateUrl: '/templates/reviews/reviewsIndex.html',
+    controller: 'ReviewsIndexController as reviewsIndex'
+  })
+  .state('reviewsShow', {
+    url: '/reviews/:id',
+    templateUrl: '/templates/reviews/reviewsShow.html',
+    controller: 'ReviewsShowController as reviewsShow'
+  })
+  .state('reviewsEdit', {
+    url: '/reviews/:id/edit',
+    templateUrl: '/templates/reviews/reviewsEdit.html',
+    controller: 'ReviewsEditController as reviewsEdit'
   })
   .state('register', {
     url: '/register',
@@ -70,5 +93,5 @@ function Router($stateProvider, $urlRouterProvider) {
     controller: 'LoginController as login'
   });
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/');
 }

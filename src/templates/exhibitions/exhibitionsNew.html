@@ -9,16 +9,11 @@
       <input type="text" placeholder="Artist/s Name" ng-model="exhibitionsNew.exhibition.artist">
     </div>
     <div>
-      <!-- here i need to ng repeat a list of galleries in a dropdown making the title chosen put the gallery id in ag model for exhib.new.glleryid  . can make an index of galleries in the exhib controller.
-
-
-
       <label>Gallery</label>
-
-      ng-repeat="gallery in exhibitionsNew.galleriesAll" value="{{ gallery.id }}" ng-model="exhibitionsNew.exhibition.gallery_id">  {{ gallery.name }}
-
+      <select ng-model="exhibitionsNew.exhibition.gallery_id">
+        <option ng-repeat="gallery in exhibitionsNew.galleriesAll" value="{{ gallery.id }}">{{ gallery.name }}</option>
+      </select>
     </div>
-  -->
   <div>
     <label>Opening Date</label>
     <input type="date" ng-model="exhibitionsNew.exhibition.opening_date">

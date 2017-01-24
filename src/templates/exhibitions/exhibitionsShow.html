@@ -1,6 +1,7 @@
 <section>
   <h1>{{ exhibitionsShow.exhibition.name }}</h1>
       <img ng-src="{{ exhibitionsShow.exhibition.image }}" alt="{{ exhibitionsShow.exhibition.name }}">
+      <p><strong>{{ exhibitionsShow.exhibition.artist }}</strong></p>
       <p><strong>From:</strong> {{ exhibitionsShow.exhibition.opening_date }}</p>
       <p><strong>Until:</strong> {{ exhibitionsShow.exhibition.closing_date }}</p>
       <p><strong>@</strong> <a ui-sref="galleriesShow({ id: exhibitionsShow.exhibition.gallery.id})">{{ exhibitionsShow.exhibition.gallery.name }}</a></p>

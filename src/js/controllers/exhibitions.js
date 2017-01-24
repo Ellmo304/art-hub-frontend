@@ -5,12 +5,15 @@ angular.module('artHub')
 .controller('ExhibitionsEditController', ExhibitionsEditController);
 
 
-ExhibitionsNewController.$inject = ['Exhibition', '$state'];
-function ExhibitionsNewController(Exhibition, $state) {
+ExhibitionsNewController.$inject = ['Exhibition', 'Gallery', '$state'];
+function ExhibitionsNewController(Exhibition, Gallery, $state) {
   const exhibitionsNew = this;
   exhibitionsNew.exhibition = {};
 
+  exhibitionsNew.galleriesAll = Gallery.query();
+
   function createExhibition() {
+    console.log(exhibitionsNew.exhibition);
     Exhibition.save(exhibitionsNew.exhibition, () => {
       $state.go('exhibitionsIndex');
     });
@@ -39,10 +42,12 @@ function ExhibitionsShowController(Exhibition, $state, $auth) {
 }
 
 
-ExhibitionsEditController.$inject = ['Exhibition', '$state', '$auth'];
-function ExhibitionsEditController(Exhibition, $state, $auth) {
+ExhibitionsEditController.$inject = ['Exhibition', 'Gallery', '$state', '$auth'];
+function ExhibitionsEditController(Exhibition, Gallery, $state, $auth) {
   const exhibitionsEdit = this;
   exhibitionsEdit.exhibition = Exhibition.get($state.params);
+
+  exhibitionsEdit.galleriesAll = Gallery.query();
   // Exhibition.get($state.params, (currentExhibition) => {
   //   exhibitionsEdit.exhibition = currentExhibition;
   //   if(exhibitionsEdit.exhibition.id !== $auth.getPayload().id) {

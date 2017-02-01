@@ -74,8 +74,8 @@ function Router($stateProvider, $urlRouterProvider) {
   })
   .state('reviewsShow', {
     url: '/reviews/:id',
-    templateUrl: '/templates/reviews/reviewsShow.html',
-    controller: 'ReviewsShowController as reviewsShow'
+    templateUrl: '/templates/reviews/reviewsShow.html'
+    // controller: 'ReviewsShowController as reviewsShow'
   })
   .state('reviewsEdit', {
     url: '/reviews/:id/edit',

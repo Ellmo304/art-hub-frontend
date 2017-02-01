@@ -16,4 +16,16 @@
 
 </section>
 <section ng-controller="CommentsNewController as commentsNew">
+  <form ng-submit="commentsNew.create()">
+    <div>
+      <textarea placeholder="Comment on this review..." ng-model="commentsNew.comment.body"></textarea>
+    </div>
+    <button>Create</button>
+  </form>
+</section>
+<section ng-controller="ReviewsShowController as reviewsShow">
+  <ul>
+    <li ng-repeat="comment in reviewsShow.review.comments">{{comment.body}} - <em>{{comment.user.username}}, {{comment.date}}</em><button ng-click="reviewsShow.deleteComment(comment.id)">X</button></li>
+  </ul>
+
 </section>

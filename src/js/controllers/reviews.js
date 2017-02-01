@@ -27,8 +27,8 @@ function ReviewsIndexController(Review) {
   reviewsIndex.all = Review.query();
 }
 
-ReviewsShowController.$inject = ['Review', '$state', '$auth'];
-function ReviewsShowController(Review, $state, $auth) {
+ReviewsShowController.$inject = ['Review', 'Comment', '$state', '$auth'];
+function ReviewsShowController(Review, Comment, $state, $auth) {
   const reviewsShow = this;
 
   reviewsShow.review = Review.get($state.params);
@@ -38,6 +38,14 @@ function ReviewsShowController(Review, $state, $auth) {
       $state.go('reviewsIndex');
     });
   }
+
+  function deleteComment(thisComment) {
+    reviewsShow.comment = Comment.get(thisComment);
+    reviewsShow.comment.$remove(() => {
+      $state.reload();
+    });
+  }
+  reviewsShow.deleteComment = deleteComment;
   reviewsShow.deleteReview = deleteReview;
 }
 

@@ -39,12 +39,14 @@ function ReviewsShowController(Review, Comment, $state, $auth) {
     });
   }
 
-  function deleteComment(thisComment) {
-    reviewsShow.comment = Comment.get(thisComment);
-    reviewsShow.comment.$remove(() => {
-      $state.reload();
+  function deleteComment(commentID) {
+    Comment.get({ id: commentID }, (thisComment) => {
+      thisComment.$remove(() => {
+        $state.reload();
+      });
     });
   }
+
   reviewsShow.deleteComment = deleteComment;
   reviewsShow.deleteReview = deleteReview;
 }

@@ -1,11 +1,13 @@
-<section>
-  <h1>Users Index</h1>
+<section class="mainSections">
+  <div class="content">
+
   <ul>
-    <li ng-repeat="user in usersIndex.all">
+    <li class="galleryBox" ng-repeat="user in usersIndex.all">
       <a ui-sref="usersShow({ id: user.id })"><div>
       <h2>{{ user.username }}</h2>
       <h4>{{ user.email }}</h4>
     </div></a>
     </li>
   </ul>
+</div>
 </section>

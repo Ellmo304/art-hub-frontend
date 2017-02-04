@@ -19,6 +19,7 @@ body {
 
 nav {
   width: 100%;
+  border-bottom: 5px solid #3366ff;
 }
 div.container {
   width: 80%;
@@ -91,8 +92,12 @@ div.content {
     li.galleryBox {
       margin: 0 auto;
       width: 30%;
+      padding: 10px;
       display: inline-block;
       // border: 2px solid black;
+      a {
+        padding-right: 0;
+      }
       img {
         width: 90%;
       }

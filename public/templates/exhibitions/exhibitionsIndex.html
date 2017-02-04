@@ -1,7 +1,7 @@
-<section>
-  <h1>Exhibitions</h1>
+<section class="mainSections">
+  <div class="content">
   <ul>
-    <li ng-repeat="exhibition in exhibitionsIndex.all | orderBy : 'opening_date' : true">
+    <li class="galleryBox" ng-repeat="exhibition in exhibitionsIndex.all | orderBy : 'opening_date' : true">
       <a ui-sref="exhibitionsShow({ id: exhibition.id })"><div>
       <h2>{{ exhibition.name }}</h2>
       <h4>{{ exhibition.artist }}</h4>
@@ -15,5 +15,5 @@
   <br>
   <button ui-sref="exhibitionsNew">Click here to upload a new exhibition</button>
   <!-- <button ng-if="galleriesIndex.isUser()">Click here to add a new gallery</button> -->
-
+</div>
 </section>

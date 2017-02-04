@@ -6,6 +6,10 @@ body {
   font-size: 20px;
   li {
     list-style-type: none;
+    display: inline-block;
+  }
+  ul {
+    padding-left: 0px;
   }
 }
 
@@ -66,4 +70,33 @@ nav li, a {
 }
 .homeHead.gals {
   margin-top: 17%;
+}
+
+.mainSections {
+  width: 100%;
+  margin: 0 auto;
+  // background-color: blue;
+}
+
+
+
+div.content {
+  margin: 0 auto;
+  display: inline-block;
+  width: 80%;
+  // background-color: green;
+  ul {
+    width: 100%;
+    // background-color: red;
+    li.galleryBox {
+      margin: 0 auto;
+      width: 30%;
+      display: inline-block;
+      // border: 2px solid black;
+      img {
+        width: 90%;
+      }
+      // margin: 0 auto;
+    }
+  }
 }

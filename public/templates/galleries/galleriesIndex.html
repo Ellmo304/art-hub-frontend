@@ -1,7 +1,8 @@
-<section>
+<section class="mainSections">
+  <div class="content">
   <h1>London Galleries</h1>
   <ul>
-    <li ng-repeat="gallery in galleriesIndex.all">
+    <li class="galleryBox" ng-repeat="gallery in galleriesIndex.all">
       <a ui-sref="galleriesShow({ id: gallery.id })"><div>
       <h2>{{ gallery.name }}</h2>
       <h4>{{ gallery.tube }}</h4>
@@ -13,5 +14,5 @@
   <br>
   <button ui-sref="galleriesNew">Click here to add a new gallery</button>
   <!-- <button ng-if="galleriesIndex.isUser()">Click here to add a new gallery</button> -->
-
+</div>
 </section>

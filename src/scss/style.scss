@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  li {
+    list-style-type: none;
+  }
+}
+
+#logout {
+  cursor: pointer;
+}
+
+nav {
+  width: 100%;
+}
+div.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav li, a {
+  list-style-type: none;
+  text-decoration: none;
+  padding-right: 30px;
+  display: inline-block;
+  color: #333333;
+  &:hover {
+    color: #3366ff;
+  }
+}
+
+#logo {
+  margin-top: -2px;
+  font-size: 24px;
+  font-weight: 900;
+  float: left;
+  a {
+    color: #3366ff;
+  }
+}
+
+#homeBg {
+  background-image: url("http://www.saic.edu/150/sites/default/files/Jeff-Koons-balloondog_blue_KUB-feature.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin-left: -8px;
+  position: fixed;
+}
+
+.homeHead {
+  font-size: 50px;
+  text-align: left;
+  padding-left: 30px;
+  text-shadow: 3px 3px 3px #999999;
+  a{
+    color: #333333;
+  }
+  a:hover {
+    color: #3366ff;
+    text-decoration: none;
+  }
+}
+.homeHead.gals {
+  margin-top: 17%;
+}

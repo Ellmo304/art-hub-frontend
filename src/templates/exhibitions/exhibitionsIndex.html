@@ -1,7 +1,7 @@
 <section>
   <h1>Exhibitions</h1>
   <ul>
-    <li ng-repeat="exhibition in exhibitionsIndex.all">
+    <li ng-repeat="exhibition in exhibitionsIndex.all | orderBy : 'opening_date' : true">
       <a ui-sref="exhibitionsShow({ id: exhibition.id })"><div>
       <h2>{{ exhibition.name }}</h2>
       <h4>{{ exhibition.artist }}</h4>

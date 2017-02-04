@@ -1,7 +1,7 @@
 <section>
   <h1>Reviews Index</h1>
   <ul>
-    <li ng-repeat="review in reviewsIndex.all">
+    <li ng-repeat="review in reviewsIndex.all | orderBy : 'date' : true">
       <a ui-sref="reviewsShow({ id: review.id })"><div>
       <h2>{{ review.exhibition.name }}: {{review.title }}</h2>
       <h4>{{ review.user.username }}</h4>
